@@ -56,17 +56,7 @@ $(function () {
            // else no content do nothing
 
 
-
-  //TODO: add code to display the current date in the header of the page
-
-  //1. create var for dayjs to get current date 
-  //2. $("currentDay").text(var)
-
-
-
-  // TODO: Add code to display the current date in the header of the page.
-
-  //
-  //crfeate var for jayjs to get current date and time maybe
-  //2. $("#currentDay").text(var)
+  // Display the current date in the header of the page
+  var currentDate = dayjs().format("dddd, MMMM D, YYYY"); // Get the current date using Day.js
+  $("#currentDay").text(currentDate); // Set the text of the currentDay element to the current date
 });
