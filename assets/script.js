@@ -1,5 +1,5 @@
 $(function() {
-  // Add a listener for click events on the save button
+  // Add a listener for click on the save button
   $(".saveBtn").on("click", function() {
     var hour = $(this).parent().attr("id"); // Get the id of the containing time-block
     var description = $(this).siblings(".description").val(); // Get the user input
@@ -12,7 +12,7 @@ $(function() {
   // attribute of each time-block be used to conditionally add or remove the
   // past, present, and future classes? How can Day.js be used to get the
   // current hour in 24-hour time?
-
+  var currentHour = dayjs().hour();
   //0 - use jquery.children to select children elements
 
   // js vanilla version document.query(".yimr-block"); (we need jquery)
