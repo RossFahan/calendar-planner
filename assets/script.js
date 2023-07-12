@@ -7,30 +7,21 @@ $(function() {
     localStorage.setItem(hour, description); // Save the user input in local storage
   });
 
-  // TODO: Add code to apply the past, present, or future class to each time
-  // block by comparing the id to the current hour. HINTS: How can the id
-  // attribute of each time-block be used to conditionally add or remove the
-  // past, present, and future classes? How can Day.js be used to get the
-  // current hour in 24-hour time?
-  var currentHour = dayjs().hour();
-  //0 - use jquery.children to select children elements
+// Get the current hour using Day.js
+  var currentHour = dayjs().hour(); 
 
-  // js vanilla version document.query(".yimr-block"); (we need jquery)
+  //use jQuery .each method to iterate each time block and apply the correct class (past, present, future)
+ $(".time-block").each(function() {
+    var hour = parseInt($(this).attr("id").split("-")[1]); // Extract the hour from the id
 
-  //1 - use dayjs() to grab current time (just the hour)
-  //2 - use a loop to iterate through time blocks
-
-    // **** alt soulution inside the for loop select the time block i index       other -  use children
-    //for(i=9; i < 18; i++)
-    // document.querySelector("#hour-" + i) //use jquery selector
-
-  //2a  - use if statement to compare the current hour to the 9am block (then iterate to 10 11 etc
-      // if current time < current timeblocka apply future
-      // else if the current hour is qual to time block apply present class
-      // else the current hour is greater than time block apply past class
-
-  //3 - remove past, present, and future class in html and append the correct class
-
+    if (hour < currentHour) {
+      $(this).removeClass("present future").addClass("past"); 
+    } else if (hour === currentHour) {
+      $(this).removeClass("past future").addClass("present");
+    } else {
+      $(this).removeClass("past present").addClass("future");
+    }
+  });
   
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
