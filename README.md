@@ -13,7 +13,7 @@
 
 ## Description 
 
-[Visit the Deployed Site](https://rossfahan.github.io/password-generator)
+[Visit the Deployed Site](https://rossfahan.github.io/calendar-planner)
 
 This is a simple calendar application that allows a user to save events for each hour of a typical working day (9am–5pm). This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery and uses the Day.js API to handle date and time.
 
